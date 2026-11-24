@@ -537,6 +537,348 @@
           "response": []
         }
       ]
+    },
+    {
+      "name": "rama 2 · terapistas",
+      "item": [
+        {
+          "name": "1 Terapistas listar",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/terapistas",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "terapistas"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "2 Terapistas activas",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/terapistas/activos",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "terapistas",
+                "activos"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "3 Terapistas buscar",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/terapistas/buscar?texto=gut",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "terapistas",
+                "buscar"
+              ],
+              "query": [
+                {
+                  "key": "texto",
+                  "value": "gut"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "4 Terapistas obtener 1",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/terapistas/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "terapistas",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "5 Terapistas obtener 999",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/terapistas/999",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "terapistas",
+                "999"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "6 Terapistas crear con DNI repetido",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"usuarioId\": 23, \"nombres\": \"Valeria\", \"apellidos\": \"Torres Rojas\", \"dni\": \"41257893\", \"telefono\": \"987100207\", \"activo\": true}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/terapistas",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "terapistas"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "7 Terapistas crear (usuario 23)",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"usuarioId\": 23, \"nombres\": \"Valeria\", \"apellidos\": \"Torres Rojas\", \"dni\": \"49012345\", \"telefono\": \"987100207\", \"activo\": true}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/terapistas",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "terapistas"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "8 Terapistas crear con el mismo usuario",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"usuarioId\": 23, \"nombres\": \"Valeria\", \"apellidos\": \"Torres Rojas\", \"dni\": \"49012346\", \"telefono\": \"987100207\", \"activo\": true}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/terapistas",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "terapistas"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "9 Terapistas usuario sin rol TERAPISTA",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"usuarioId\": 13, \"nombres\": \"Valeria\", \"apellidos\": \"Torres Rojas\", \"dni\": \"49012347\", \"telefono\": \"987100207\", \"activo\": true}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/terapistas",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "terapistas"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "10 Terapistas usuario que no existe",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"usuarioId\": 999, \"nombres\": \"Valeria\", \"apellidos\": \"Torres Rojas\", \"dni\": \"49012348\", \"telefono\": \"987100207\", \"activo\": true}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/terapistas",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "terapistas"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "11 Terapistas DNI y celular inválidos",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"usuarioId\": 23, \"nombres\": \"Valeria\", \"apellidos\": \"Torres Rojas\", \"dni\": \"123\", \"telefono\": \"12345\", \"activo\": true}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/terapistas",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "terapistas"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "12 Terapistas actualizar la creada",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"usuarioId\": 23, \"nombres\": \"Valeria\", \"apellidos\": \"Torres Rojas\", \"dni\": \"49012345\", \"telefono\": \"987100299\", \"activo\": true}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/terapistas/7",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "terapistas",
+                "7"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "13 Terapistas eliminar 1 (tiene citas)",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/terapistas/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "terapistas",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "14 Terapistas eliminar la creada",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/terapistas/7",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "terapistas",
+                "7"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
     }
   ],
   "variable": [
